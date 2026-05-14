@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-Commerce Python</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Bienvenue sur notre boutique</h1>
+
+<a href="/cart">Voir le panier</a>
+
+<div class="products">
+    {% for product in products %}
+    <div class="card">
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.price }} €</p>
+
+        <a href="/add/{{ product.id }}">
+            <button>Ajouter au panier</button>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>
